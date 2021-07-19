@@ -1,4 +1,4 @@
-import glob, toolz
+import glob
 from textblob import TextBlob
 try:
     import cPickle as pickle

@@ -3,8 +3,6 @@ try:
     import cPickle as pickle
 except ImportError:
     import pickle
-import glob
-import nltk
 
 words = []
 wiki = []
@@ -53,7 +51,7 @@ for TwoGram in TwoGrams:
     else:
         improbabilities[TwoGram] = TwoGrams[TwoGram]
 for index, phrase in enumerate(sorted(improbabilities, key=improbabilities.get)[::-1]):
-    if index <= 15:
+    if index <= 10:
         print(phrase, improbabilities[phrase])
     else:
         break
@@ -66,7 +64,7 @@ for ThreeGram in ThreeGrams:
     else:
         improbabilities[ThreeGram] = ThreeGrams[ThreeGram]
 for index, phrase in enumerate(sorted(improbabilities, key=improbabilities.get)[::-1]):
-    if index <= 15:
+    if index <= 10:
         print(phrase, improbabilities[phrase])
     else:
         break
