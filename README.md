@@ -10,4 +10,4 @@ automatically work.
 By training this algorithm on 831 english wikipedia articles it's output for the Bigrams 
 and Trigrams for the website https://en.wikipedia.org/wiki/Paul_the_Apostle#Gnosticism, about the apostle 
 Paul was as follows:  
-![](sips_paul.JPG)  
+![sips_paul](https://user-images.githubusercontent.com/87315965/126150188-f01f3a8b-033b-4f42-8eb4-d639e413d8eb.JPG)
