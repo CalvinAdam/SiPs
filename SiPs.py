@@ -6,9 +6,6 @@ except ImportError:
 import glob
 import nltk
 
-
-TwoGrams_corpus = {}
-max_p_two = 0.012242832903921587
 words = []
 wiki = []
 TwoGrams, ThreeGrams = {}, {}
@@ -16,14 +13,9 @@ improbabilities = {}
 bigsum, smallsum = 0, 0
 removable_characters = """,.;:!"(')-*&_/"""
 # Import the TwoGrams_corpus for 2-grams
-with open("C:/Users/Calvin/Desktop/count_2w.txt") as c:
-    for line in c:
-        word1, word2, count = line.split()
-        TwoGrams_corpus[f'{word1} {word2}'] = int(count)
-        bigsum += int(count)
-for key in TwoGrams_corpus.keys():
-    TwoGrams_corpus[key] = TwoGrams_corpus[key]/bigsum
-print("Done with TwoGrams_corpus")
+TwoGrams_corpus = pickle.load(open('TwoGrams.pkl', 'rb'))
+max_p_two = TwoGrams_corpus['max_p']
+del TwoGrams_corpus['max_p']
 # Import the TwoGrams_corpus for 3-Grams (wikipedia)
 ThreeGrams_corpus = pickle.load(open('ThreeGrams.pkl', 'rb'))
 max_p_three = ThreeGrams_corpus['max_p']
